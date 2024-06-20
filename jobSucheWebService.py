@@ -1,13 +1,14 @@
-import Angebot
 import requests
-def gets_angebots():
+
+
+def gets_angebots(ort, umkreis):
     url = "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/jobs"
     params = {
         "angebotsart": 4,
         "ausbildungsart": 0,
         "was": "Anwendungsentwicklung",
-        "wo": str(Angebot.Angebot.ort_angebot),
-        "umkreis": int(Angebot.Angebot.umkreis_angebot),
+        "wo": str(ort),
+        "umkreis": int(umkreis),
         "page": 1,
         "size": 25,
         "pav": "false",

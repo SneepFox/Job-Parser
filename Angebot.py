@@ -8,10 +8,6 @@ class Angebot:
         self.date = date
         self.entfernung = entfernung
 
-    print("Willkommen beim Jobparser als Azubi Fachinformatiker/in - Anwendungsentwicklung.")
-    ort_angebot = input("Stadt? : ")
-    umkreis_angebot = input("Umkreis? : ")
-
     def to_string(self):
         if self.strasse:
             strasse_str = f'\nStrasse: {self.strasse}'
