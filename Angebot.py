@@ -1,12 +1,13 @@
 import jobSucheWebService
 class Angebot:
-    def __init__(self, title, arbeitgeber, ort, strasse, date, entfernung):
+    def __init__(self, title, arbeitgeber, ort, strasse, date, entfernung,description):
         self.title = title
         self.arbeitgeber = arbeitgeber
         self.ort = ort
         self.strasse = strasse
         self.date = date
         self.entfernung = entfernung
+        self.description = description
 
     def to_string(self):
         if self.strasse:
@@ -14,7 +15,14 @@ class Angebot:
         else:
             strasse_str = ''
 
+        self.description = f'\nBeschreibung: \n{self.description}' if self.description else ''
 
-        return (f"\nBeruf: {self.title}\nArbeitgeber: {self.arbeitgeber}\nOrt:{self.ort}{strasse_str}"
-                f"\nVeröffentlichungsdatum:{self.date}\nEntfernung von der ausgewählten Stadt: {self.entfernung}KM\n\n")
+
+
+        return (f'''
+Beruf: {self.title}Arbeitgeber: {self.arbeitgeber}
+Ort:{self.ort}{strasse_str}
+Veröffentlichungsdatum:{self.date}
+Entfernung von der ausgewählten Stadt: {self.entfernung}KM
+{self.description}''')
 
