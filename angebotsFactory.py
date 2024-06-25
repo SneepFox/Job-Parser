@@ -28,8 +28,8 @@ def build_angebots(ort_angebot,umkreis_angebot):
                 description_str = ""
 
 
-        angebot_object = Angebot(title, arbeitgeber, ort, strasse, date,entfernung,description_str)
-        jobs.append(angebot_object)
+            angebot_object = Angebot(title, arbeitgeber, ort, strasse, date,entfernung,description_str)
+            jobs.append(angebot_object)
 
     return jobs
 
